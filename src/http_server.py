@@ -11,7 +11,7 @@ import dnsmasq
 
 # Defaults
 ADDRESS = '192.168.42.1'
-PORT = 80
+PORT = 8080
 UI_PATH = '../ui'
 
 
