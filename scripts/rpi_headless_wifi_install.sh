@@ -5,22 +5,6 @@ echo "It verifies NetworkManager is installed."
 echo "If not, installs it (and in the process disables the dhcpcd service)"
 echo " This script will work with raspbian 11 (bullseye) version"
 
-check_os_version () {
-    if [[ "$OSTYPE" != "linux"* ]]; then
-        echo "ERROR: This application only runs on Linux."
-        exit 1
-    fi
-
-    local _version=""
-    if [ -f /etc/os-release ]; then
-        _version=$(grep -oP 'VERSION="\K[^"]+' /etc/os-release)
-    fi
-    if [ "$_version" != "11 (bullseye)" ]; then
-        echo "ERROR: Distribution not based on Raspbian 11 (bullyeye)."
-        exit 1
-    fi
-}
-
 # install manager enables the Network Manager but does not start until reboot.   
 
 install_network_manager () {
